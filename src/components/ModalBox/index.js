@@ -6,6 +6,7 @@ import { Text } from '../Text';
 import { Title } from '../Title';
 import { getMemories } from '../../api';
 import { SubmitButton, Input, IconContainer, IconWrapper } from '../FormMemory';
+import { CloseButton } from '../ModalMemory';
 import axios from 'axios';
 
 const API_URL = 'http://localhost:5000';
@@ -43,17 +44,6 @@ const ModalMemories = styled.div`
   flex-wrap: wrap;
   overflow: auto;
   gap: 10%;
-`;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  color: var(--text-color);
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
 `;
 
 const MemoryCard = styled.div`
