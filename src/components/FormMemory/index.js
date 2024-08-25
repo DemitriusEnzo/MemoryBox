@@ -58,7 +58,7 @@ export const IconContainer = styled.div`
 
 export const IconWrapper = styled.div`
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
   border: 2px solid ${({ isSelected }) => (isSelected ? 'var(--secondary-color)' : 'transparent')};
   border-radius: 50%;
   transition: border-color 0.3s;
@@ -69,6 +69,7 @@ export const IconWrapper = styled.div`
 
   & > svg {
     color: ${({ isSelected }) => (isSelected ? 'var(--secondary-color)' : 'var(--text-color)')};
+    font-size: 2em;
   }
 `;
 

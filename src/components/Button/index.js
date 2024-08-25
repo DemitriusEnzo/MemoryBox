@@ -10,7 +10,8 @@ const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40%;
+  height: auto;
+  padding: 0.5%;
   border: 3px solid var(--text-color);
   border-radius: var(--border-radius);
   background-color: var(--secondary-color);

@@ -14,6 +14,14 @@ const BoxImage = styled.img`
     scale: 1.05;
     filter: invert(55%) sepia(100%) saturate(9000%) hue-rotate(355deg) brightness(90%) contrast(110%);
   }
+
+    @media (min-width: 321px) and (max-width: 780px) {
+      width: 25%;
+    }
+
+    @media (min-width: 781px) and (max-width: 1280px) {
+      width: 20%;
+    }
 `;
 
 function MemoryBox() {

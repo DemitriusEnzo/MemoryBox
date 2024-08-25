@@ -31,6 +31,12 @@ export const CloseButton = styled.button`
   border: none;
   font-size: 1.5em;
   cursor: pointer;
+
+  @media (max-width: 830px) {
+    top: 5px;
+    right: 5px;
+    font-size: 1.2em;
+  }
 `;
 
 function ModalMemory({ children, onClose }) {

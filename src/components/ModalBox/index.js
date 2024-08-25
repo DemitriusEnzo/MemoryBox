@@ -26,24 +26,36 @@ const ModalOverlay = styled.div`
 
 const ModalContent = styled.div`
   position: relative;
-  width: 95vw;
-  height: 75vh;
+  width: 90vw; /* Ajuste a largura para caber melhor em diferentes tamanhos de tela */
+  max-width: 800px; /* Defina uma largura máxima */
+  height: 80vh; /* Ajuste a altura conforme necessário */
   background-image: linear-gradient(180deg, var(--primary-color), var(--primary-color), var(--primary-color-gradient), var(--primary-color-gradient), var(--primary-color));
   border-radius: var(--border-radius);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   color: var(--text-color);
   text-align: center;
+  overflow: auto;
+
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: 90vh; /* Ajuste a altura para preencher a tela */
+  }
 `;
 
 const ModalMemories = styled.div`
-  width: 95vw;
-  height: 65vh;
+  width: 100%;
+  height: auto; /* Permite que a altura seja ajustada automaticamente */
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center; /* Centraliza os cards horizontalmente */
   flex-wrap: wrap;
-  overflow: auto;
-  gap: 10%;
+  gap: 10px; /* Reduza o espaço entre os cards */
+  padding: 10px 0; /* Adiciona um pouco de espaço acima e abaixo dos cards */
+  
+  @media (max-width: 600px) {
+    flex-direction: column; /* Alinha os cards verticalmente em telas pequenas */
+    align-items: center; /* Centraliza os cards horizontalmente */
+  }
 `;
 
 const MemoryCard = styled.div`
@@ -52,13 +64,17 @@ const MemoryCard = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: var(--focus-color);
-  margin: 1.5% 0;
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: var(--text-color);
   text-align: center;
-  width: 30%;
+  width: 300px; /* Defina uma largura fixa para os cards */
+  margin: 10px; /* Adiciona espaço ao redor dos cards */
+
+  @media (max-width: 600px) {
+    width: 80vw; /* Ajusta a largura para caber melhor em telas menores */
+  }
 `;
 
 const MemoryInfos = styled.div`

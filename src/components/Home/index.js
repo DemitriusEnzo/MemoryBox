@@ -36,6 +36,7 @@ const HomeButton = styled(Link)`
   font-size: 2em;
   font-weight: 900;
   text-decoration: none;
+  text-align: center;
   transition: .7s;
   
   &:hover {
