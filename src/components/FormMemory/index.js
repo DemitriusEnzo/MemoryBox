@@ -18,7 +18,7 @@ export const Input = styled.input`
   border: 2px solid var(--secondary-color);
   border-radius: var(--border-radius);
   font-family: var(--font-family);
-  font-weight: 900;
+  font-weight: var(--font-weight);
   font-size: var(--input-text-size);
   cursor: pointer;
 
@@ -42,7 +42,7 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   font-family: var(--font-family);
   font-size: ${props => props.fontSize || 'var(--text-size)'};
-  font-weight: 900;
+  font-weight: var(--font-weight);
   transition: .7s;
   
   &:hover {
@@ -69,7 +69,7 @@ export const IconWrapper = styled.div`
 
   & > svg {
     color: ${({ isSelected }) => (isSelected ? 'var(--secondary-color)' : 'var(--text-color)')};
-    font-size: 2em;
+    font-size: var(--input-text-size);
   }
 `;
 

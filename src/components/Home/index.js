@@ -33,8 +33,8 @@ const HomeButton = styled(Link)`
   border-radius: var(--border-radius);
   cursor: pointer;
   font-family: var(--font-family);
-  font-size: 2em;
-  font-weight: 900;
+  font-size: var(--input-text-size);
+  font-weight: var(--font-weight);
   text-decoration: none;
   text-align: center;
   transition: .7s;

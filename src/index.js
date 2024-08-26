@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --text-size: 3em;
     --title-size: 4em;
     --input-text-size: 2em;
+    --font-weight: 900;
     --border-radius: 8px;
     --font-family: 'Amatic SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;

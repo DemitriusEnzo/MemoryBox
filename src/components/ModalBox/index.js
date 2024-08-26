@@ -26,9 +26,9 @@ const ModalOverlay = styled.div`
 
 const ModalContent = styled.div`
   position: relative;
-  width: 90vw; /* Ajuste a largura para caber melhor em diferentes tamanhos de tela */
-  max-width: 800px; /* Defina uma largura máxima */
-  height: 80vh; /* Ajuste a altura conforme necessário */
+  width: 90vw;
+  max-width: 800px;
+  height: 80vh;
   background-image: linear-gradient(180deg, var(--primary-color), var(--primary-color), var(--primary-color-gradient), var(--primary-color-gradient), var(--primary-color));
   border-radius: var(--border-radius);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -38,23 +38,23 @@ const ModalContent = styled.div`
 
   @media (max-width: 600px) {
     width: 100vw;
-    height: 90vh; /* Ajuste a altura para preencher a tela */
+    height: 90vh;
   }
 `;
 
 const ModalMemories = styled.div`
   width: 100%;
-  height: auto; /* Permite que a altura seja ajustada automaticamente */
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Centraliza os cards horizontalmente */
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px; /* Reduza o espaço entre os cards */
-  padding: 10px 0; /* Adiciona um pouco de espaço acima e abaixo dos cards */
+  gap: 10px;
+  padding: 10px 0;
   
   @media (max-width: 600px) {
-    flex-direction: column; /* Alinha os cards verticalmente em telas pequenas */
-    align-items: center; /* Centraliza os cards horizontalmente */
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -69,11 +69,11 @@ const MemoryCard = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   color: var(--text-color);
   text-align: center;
-  width: 300px; /* Defina uma largura fixa para os cards */
-  margin: 10px; /* Adiciona espaço ao redor dos cards */
+  width: 300px;
+  margin: 10px;
 
   @media (max-width: 600px) {
-    width: 80vw; /* Ajusta a largura para caber melhor em telas menores */
+    width: 80vw;
   }
 `;
 
