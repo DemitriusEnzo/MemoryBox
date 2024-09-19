@@ -30,18 +30,15 @@ function MemoryBox() {
 
   const handleMemoryBoxClick = () => {
     setModalOpen(true);
-    console.log('MemoryBox clicked, opening modal');
   };
 
   const handleCloseModal = () => {
     setModalOpen(false);
   };
 
-  console.log('MemoryBox rendering with user:', user);
-
   return (
     <Div height='30%'>
-      <BoxImage src="/box-open-solid.svg" alt="Favicon" onClick={handleMemoryBoxClick} />
+      <BoxImage src="/box-open-solid.svg" alt="Open Memory Box" onClick={handleMemoryBoxClick} aria-label="Open Memory Box" />
       {user && <ModalBox isOpen={modalOpen} onClose={handleCloseModal} username={user.username} />}
     </Div>
   );

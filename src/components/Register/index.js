@@ -31,7 +31,7 @@ function Register() {
         navigate('/login');
       }
     } catch (error) {
-      setMessage('Error registering user.');
+      setMessage(error.message);
     }
   };
 
@@ -44,15 +44,17 @@ function Register() {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          aria-label="Username"
         />
         <Input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          aria-label="Password"
         />
         <SubmitButton type="submit">Register</SubmitButton>
-        <Text fontSize="1em">{message}</Text>
+        <Text fontSize="30px" marginTop="20px">{message}</Text>
       </Form>
     </RegisterContainer>
   );

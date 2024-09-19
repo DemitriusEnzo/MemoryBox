@@ -6,7 +6,7 @@ import FormMemory from '../FormMemory';
 import ModalMemory from '../ModalMemory';
 
 const ButtonDiv = styled.div`
-  width: 20%;
+  width: ${(props) => props.width || '20%'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ const ButtonDiv = styled.div`
   border: 3px solid var(--text-color);
   border-radius: var(--border-radius);
   background-color: var(--secondary-color);
-  transition: .7s;
+  transition: 0.7s;
   cursor: pointer;
 
   &:hover {
@@ -24,7 +24,7 @@ const ButtonDiv = styled.div`
   }
 `;
 
-function Button() {
+function Button({ text, ariaLabel }) {
   const [showForm, setShowForm] = useState(false);
 
   const handleClick = () => {
@@ -37,8 +37,8 @@ function Button() {
 
   return (
     <Div>
-      <ButtonDiv onClick={handleClick}>
-        <Text fontSize="2em">Store your memories here</Text>
+      <ButtonDiv onClick={handleClick} aria-label={ariaLabel}>
+        <Text fontSize="2em">{text}</Text>
       </ButtonDiv>
       {showForm && (
         <ModalMemory onClose={handleClose}>

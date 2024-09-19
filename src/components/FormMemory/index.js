@@ -50,6 +50,12 @@ export const SubmitButton = styled.button`
   }
 `;
 
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: var(--text-size);
+  margin: 0;
+`;
+
 export const IconContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -77,6 +83,7 @@ function FormMemory() {
   const today = new Date().toISOString().split('T')[0];
   const [selectedIcon, setSelectedIcon] = useState(null);
   const { user } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleIconClick = (icon) => {
     setSelectedIcon(icon);
@@ -91,28 +98,31 @@ function FormMemory() {
       try {
         await addMemory(user.username, title, date, selectedIcon);
         alert('Memory added successfully');
+        setErrorMessage('');
       } catch (error) {
         console.error('Failed to submit memory:', error);
-        alert('Failed to submit memory.');
+        setErrorMessage('Failed to submit memory.');
       }
     } else {
-      alert('All fields are required');
+      setErrorMessage('All fields are required');
     }
   };
 
   return (
     <Form onSubmit={handleSubmit}>
       <Title>Detail your memory!</Title>
-      <Input 
+      <Input
         name="title"
-        type="text" 
-        placeholder="Memory Title" 
-        maxLength={50} 
+        type="text"
+        placeholder="Memory Title"
+        maxLength={50}
+        aria-label="Memory Title"
       />
       <Input
         name="date"
-        type="date" 
-        max={today} 
+        type="date"
+        max={today}
+        aria-label="Memory Date"
       />
       <IconContainer>
         <IconWrapper isSelected={selectedIcon === 'smile'} onClick={() => handleIconClick('smile')}>
@@ -135,6 +145,7 @@ function FormMemory() {
         </IconWrapper>
       </IconContainer>
       <SubmitButton type="submit">Send to Box</SubmitButton>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </Form>
   );
 }

@@ -5,7 +5,7 @@ import { Div } from '../TextContainer';
 function BoxText() {
   return (
     <Div height='10%'>
-      <Text>Click the box to see your memories</Text>
+      <Text aria-label="Click the box to see your memories">Click the box to see your memories</Text>
     </Div>
   );
 }

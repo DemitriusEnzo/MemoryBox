@@ -12,15 +12,17 @@ const HomeContainer = styled.div`
   height: 100vh;
   width: 100vw;
   background-image: linear-gradient(180deg, var(--primary-color), var(--primary-color), var(--primary-color-gradient), var(--primary-color-gradient), var(--primary-color));
+  padding: 20px;
+  box-sizing: border-box;
 `;
 
 const HomeContent = styled.div`
-  width: 40%;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
   gap: 30px;
   margin-bottom: 3%;
 `;
@@ -37,7 +39,7 @@ const HomeButton = styled(Link)`
   font-weight: var(--font-weight);
   text-decoration: none;
   text-align: center;
-  transition: .7s;
+  transition: 0.7s;
   
   &:hover {
     background-color: var(--hover-color);
@@ -52,11 +54,11 @@ function Home() {
         <Text>
           Already have an account?
         </Text>
-        <HomeButton to="/login">Log in</HomeButton>
+        <HomeButton to="/login" aria-label="Log in to your account">Log in</HomeButton>
         <Text>
           Don't have an account?
         </Text>
-        <HomeButton to="/register">Create one now</HomeButton>
+        <HomeButton to="/register" aria-label="Create a new account">Create one now</HomeButton>
       </HomeContent>
     </HomeContainer>
   );

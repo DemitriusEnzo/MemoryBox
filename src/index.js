@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import { AuthProvider } from './context/AuthContext';
 
@@ -44,5 +43,3 @@ root.render(
     </AuthProvider>
   </React.StrictMode>
 );
-
-reportWebVitals();

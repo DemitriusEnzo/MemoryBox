@@ -22,6 +22,13 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 `;
 
 const ModalContent = styled.div`
@@ -35,6 +42,13 @@ const ModalContent = styled.div`
   color: var(--text-color);
   text-align: center;
   overflow: auto;
+  transform: translateY(-50px);
+  animation: slideIn 0.3s forwards;
+
+  @keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
 
   @media (max-width: 600px) {
     width: 100vw;
@@ -51,7 +65,7 @@ const ModalMemories = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   padding: 10px 0;
-  
+
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
@@ -126,10 +140,10 @@ function ModalBox({ isOpen, onClose, username }) {
   };
 
   const saveMemory = async () => {
-    if (!editingMemory) return;
+    if (!editingMemory || !newTitle || !newDate) return;
 
     try {
-      const response = await axios.put(`${API_URL}/api/memories/${editingMemory.id}`, {
+      await axios.put(`${API_URL}/api/memories/${editingMemory.id}`, {
         title: newTitle,
         date: newDate,
         icon: newIcon
@@ -138,11 +152,9 @@ function ModalBox({ isOpen, onClose, username }) {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
-      console.log('Memory updated successfully:', response.data);
-
-      setMemories(memories.map(memory => 
-        memory.id === editingMemory.id 
-          ? { ...memory, title: newTitle, date: newDate, icon: newIcon } 
+      setMemories(memories.map(memory =>
+        memory.id === editingMemory.id
+          ? { ...memory, title: newTitle, date: newDate, icon: newIcon }
           : memory
       ));
       setEditingMemory(null);
@@ -179,20 +191,22 @@ function ModalBox({ isOpen, onClose, username }) {
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>X</CloseButton>
+        <CloseButton aria-label="Close modal" onClick={onClose}>X</CloseButton>
         <Text borderB="3px solid var(--text-color)">Remember your memories!</Text>
         <ModalMemories>
           {memories.map((memory) => (
             <MemoryCard key={memory.id}>
               {editingMemory && editingMemory.id === memory.id ? (
                 <>
-                  <CloseButton onClick={cancelEdit}>X</CloseButton>
+                  <CloseButton aria-label="Cancel edit" onClick={cancelEdit}>X</CloseButton>
                   <Input
+                    aria-label="Title"
                     value={newTitle}
                     onChange={(e) => setNewTitle(e.target.value)}
                     placeholder="Title"
                   />
                   <Input
+                    aria-label="Date"
                     type="date"
                     value={newDate}
                     onChange={(e) => setNewDate(e.target.value)}

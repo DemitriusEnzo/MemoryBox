@@ -17,7 +17,7 @@ function Box() {
     <BoxContainer>
       <Header />
       <TextContainer />
-      <Button />
+      <Button text="Store your memories here" ariaLabel="Store your memories here" />
       <MemoryBox />
       <BoxText />
     </BoxContainer>

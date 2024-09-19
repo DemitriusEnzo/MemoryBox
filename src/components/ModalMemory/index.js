@@ -12,6 +12,17 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const ModalContent = styled.div`
@@ -20,6 +31,19 @@ const ModalContent = styled.div`
   padding: 0.5% 10% 2%;
   border-radius: var(--border-radius);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-50px);
+  animation: slideIn 0.3s forwards;
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -41,9 +65,9 @@ export const CloseButton = styled.button`
 
 function ModalMemory({ children, onClose }) {
   return (
-    <ModalOverlay onClick={onClose}>
-      <ModalContent onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>X</CloseButton>
+    <ModalOverlay onClick={onClose} aria-label="Modal overlay for memory actions">
+      <ModalContent onClick={(e) => e.stopPropagation()} aria-label="Memory modal content">
+        <CloseButton onClick={onClose} aria-label="Close modal">X</CloseButton>
         {children}
       </ModalContent>
     </ModalOverlay>

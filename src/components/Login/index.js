@@ -26,17 +26,23 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!username || !password) {
+      setMessage('Username and password are required.');
+      return;
+    }
+
     try {
       const data = await loginUser(username, password);
       if (data.success) {
         login(username);
+        localStorage.setItem('username', username);
         setMessage('Login successful!');
         navigate('/box');
       } else {
         setMessage(data.message);
       }
     } catch (error) {
-      setMessage('Error logging in.');
+      setMessage('Error logging in. Please try again.');
     }
   };
 
@@ -49,15 +55,17 @@ function Login() {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          aria-label="Username"
         />
         <Input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          aria-label="Password"
         />
         <SubmitButton type="submit">Login</SubmitButton>
-        <Text fontSize="14px" marginTop="20px">{message}</Text>
+        <Text fontSize="30px" marginTop="20px">{message}</Text>
       </Form>
     </LoginContainer>
   );
