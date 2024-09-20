@@ -192,7 +192,7 @@ function ModalBox({ isOpen, onClose, username }) {
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <CloseButton aria-label="Close modal" onClick={onClose}>X</CloseButton>
-        <Text borderB="3px solid var(--text-color)">Remember your memories!</Text>
+        <Text borderb="3px solid var(--text-color)">Remember your memories!</Text>
         <ModalMemories>
           {memories.map((memory) => (
             <MemoryCard key={memory.id}>
@@ -214,22 +214,22 @@ function ModalBox({ isOpen, onClose, username }) {
                     max={today}
                   />
                   <IconContainer>
-                    <IconWrapper isSelected={newIcon === 'smile'} onClick={() => handleIconClick('smile')}>
+                    <IconWrapper data-isselected={newIcon === 'smile'} onClick={() => handleIconClick('smile')}>
                       <FontAwesomeIcon icon={faSmile} size="2x" />
                     </IconWrapper>
-                    <IconWrapper isSelected={newIcon === 'sad-tear'} onClick={() => handleIconClick('sad-tear')}>
+                    <IconWrapper data-isselected={newIcon === 'sad-tear'} onClick={() => handleIconClick('sad-tear')}>
                       <FontAwesomeIcon icon={faSadTear} size="2x" />
                     </IconWrapper>
-                    <IconWrapper isSelected={newIcon === 'heart'} onClick={() => handleIconClick('heart')}>
+                    <IconWrapper data-isselected={newIcon === 'heart'} onClick={() => handleIconClick('heart')}>
                       <FontAwesomeIcon icon={faHeart} size="2x" />
                     </IconWrapper>
-                    <IconWrapper isSelected={newIcon === 'star'} onClick={() => handleIconClick('star')}>
+                    <IconWrapper data-isselected={newIcon === 'star'} onClick={() => handleIconClick('star')}>
                       <FontAwesomeIcon icon={faStar} size="2x" />
                     </IconWrapper>
-                    <IconWrapper isSelected={newIcon === 'surprise'} onClick={() => handleIconClick('surprise')}>
+                    <IconWrapper data-isselected={newIcon === 'surprise'} onClick={() => handleIconClick('surprise')}>
                       <FontAwesomeIcon icon={faSurprise} size="2x" />
                     </IconWrapper>
-                    <IconWrapper isSelected={newIcon === 'laugh'} onClick={() => handleIconClick('laugh')}>
+                    <IconWrapper data-isselected={newIcon === 'laugh'} onClick={() => handleIconClick('laugh')}>
                       <FontAwesomeIcon icon={faLaugh} size="2x" />
                     </IconWrapper>
                   </IconContainer>

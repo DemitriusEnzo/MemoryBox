@@ -36,6 +36,7 @@ function Header() {
         icon={faUser}
         size="2x"
         onClick={handleProfileClick}
+        style={{ cursor: 'pointer' }}
       />
       {showProfile && (
         <ModalMemory onClose={handleCloseProfile}>

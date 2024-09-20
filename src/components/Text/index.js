@@ -6,5 +6,5 @@ export const Text = styled.h3`
   text-align: ${props => props.align || 'center'};
   margin: 0;
   padding: ${props => props.padding || 0};
-  border-bottom: ${props => props.borderB || 0};
+  border-bottom: ${props => props.borderb || 0};
 `;

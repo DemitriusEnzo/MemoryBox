@@ -65,7 +65,7 @@ export const IconContainer = styled.div`
 export const IconWrapper = styled.div`
   cursor: pointer;
   padding: 5px;
-  border: 2px solid ${({ isSelected }) => (isSelected ? 'var(--secondary-color)' : 'transparent')};
+  border: 2px solid ${({ 'data-isselected': isSelected }) => (isSelected ? 'var(--secondary-color)' : 'transparent')};
   border-radius: 50%;
   transition: border-color 0.3s;
 
@@ -74,7 +74,7 @@ export const IconWrapper = styled.div`
   }
 
   & > svg {
-    color: ${({ isSelected }) => (isSelected ? 'var(--secondary-color)' : 'var(--text-color)')};
+    color: ${({ 'data-isselected': isSelected }) => (isSelected ? 'var(--secondary-color)' : 'var(--text-color)')};
     font-size: var(--input-text-size);
   }
 `;
@@ -125,22 +125,22 @@ function FormMemory() {
         aria-label="Memory Date"
       />
       <IconContainer>
-        <IconWrapper isSelected={selectedIcon === 'smile'} onClick={() => handleIconClick('smile')}>
+        <IconWrapper data-isselected={selectedIcon === 'smile'} onClick={() => handleIconClick('smile')}>
           <FontAwesomeIcon icon={faSmile} size="2x" />
         </IconWrapper>
-        <IconWrapper isSelected={selectedIcon === 'sad-tear'} onClick={() => handleIconClick('sad-tear')}>
+        <IconWrapper data-isselected={selectedIcon === 'sad-tear'} onClick={() => handleIconClick('sad-tear')}>
           <FontAwesomeIcon icon={faSadTear} size="2x" />
         </IconWrapper>
-        <IconWrapper isSelected={selectedIcon === 'heart'} onClick={() => handleIconClick('heart')}>
+        <IconWrapper data-isselected={selectedIcon === 'heart'} onClick={() => handleIconClick('heart')}>
           <FontAwesomeIcon icon={faHeart} size="2x" />
         </IconWrapper>
-        <IconWrapper isSelected={selectedIcon === 'star'} onClick={() => handleIconClick('star')}>
+        <IconWrapper data-isselected={selectedIcon === 'star'} onClick={() => handleIconClick('star')}>
           <FontAwesomeIcon icon={faStar} size="2x" />
         </IconWrapper>
-        <IconWrapper isSelected={selectedIcon === 'surprise'} onClick={() => handleIconClick('surprise')}>
+        <IconWrapper data-isselected={selectedIcon === 'surprise'} onClick={() => handleIconClick('surprise')}>
           <FontAwesomeIcon icon={faSurprise} size="2x" />
         </IconWrapper>
-        <IconWrapper isSelected={selectedIcon === 'laugh'} onClick={() => handleIconClick('laugh')}>
+        <IconWrapper data-isselected={selectedIcon === 'laugh'} onClick={() => handleIconClick('laugh')}>
           <FontAwesomeIcon icon={faLaugh} size="2x" />
         </IconWrapper>
       </IconContainer>

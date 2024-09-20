@@ -54,7 +54,7 @@ function Register() {
           aria-label="Password"
         />
         <SubmitButton type="submit">Register</SubmitButton>
-        <Text fontSize="30px" marginTop="20px">{message}</Text>
+        <Text fontSize="30px">{message}</Text>
       </Form>
     </RegisterContainer>
   );
