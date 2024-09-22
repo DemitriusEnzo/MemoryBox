@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Demitrius Box
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Visão Geral
+O Demitrius Box Server é um projeto de front-end desenvolvido em React e Axios, com o objetivo de criar uma aplicação interativa para o armazenamento e visualização de memórias. Os usuários podem se registrar, fazer login, adicionar memórias e visualizar suas memórias em uma interface atraente e responsiva.
 
-## Available Scripts
+# Estrutura do Projeto
+A estrutura do projeto é organizada em diretórios, facilitando a manutenção e a escalabilidade:
 
-In the project directory, you can run:
+```
+src
+├── api.js
+├── App.js
+├── index.js
+├── Box.js
+├── components
+│   ├── BoxText
+│   │   └── index.js
+│   ├── Button
+│   │   └── index.js
+│   ├── FormMemory
+│   │   └── index.js
+│   ├── Header
+│   │   └── index.js
+│   ├── Home
+│   │   └── index.js
+│   ├── Login
+│   │   └── index.js
+│   ├── MemoryBox
+│   │   └── index.js
+│   ├── ModalMemory
+│   │   └── index.js
+│   ├── Profile
+│   │   └── index.js
+│   ├── Register
+│   │   └── index.js
+│   ├── Title
+│   │   └── index.js
+│   ├── Text
+│   │   └── index.js
+│   └── TextContainer
+│       └── index.js
+└── context
+    └── AuthContext.js
+```
+    
+# Configuração do Projeto
+Dependências
+Certifique-se de que as seguintes dependências estão instaladas no seu projeto:
+react
+react-dom
+react-router-dom
+styled-components
+axios
+@fortawesome/react-fontawesome
+@fortawesome/free-solid-svg-icons
 
-### `npm start`
+# Configuração do Ambiente
+Clonar o repositório:
+git clone https://github.com/EnzoDemitrius10/DemitriusBox
+cd DemitriusBox
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instalar as dependências:
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Iniciar o servidor:
+npm start
 
-### `npm test`
+# Descrição dos Componentes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. `api.js`: Descrição das funções e chamadas de API que gerenciam as operações relacionadas a usuários e memórias.
 
-### `npm run build`
+2. `App.js`: Descrição sobre como ele configura as rotas da aplicação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. `components/BoxText/index.js`: Descrição do que este componente exibe e como se integra ao layout.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. `components/FormMemory/index.js`: Descrição sobre o formulário para adicionar memórias, incluindo validações.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. `components/Header/index.js`: Descrição sobre a exibição do cabeçalho e a navegação que ele proporciona.
 
-### `npm run eject`
+6. `components/Home/index.js`: Descrição da página inicial e suas opções.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+7. `components/Login/index.js`: Descrição sobre a funcionalidade de login.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+8. `components/MemoryBox/index.js`: Descrição sobre a caixa de memórias e suas interações.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+9. `components/ModalMemory/index.js`: Descrição sobre a exibição do modal para adicionar memórias.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+10. `components/Profile/index.js`: Descrição sobre o componente de perfil e suas funcionalidades.
 
-## Learn More
+11. `components/Register/index.js`: Descrição sobre a página de registro.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+12. `components/Title/index.js`: Descrição do componente que exibe títulos na aplicação.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+13. `components/Text/index.js`: Descrição sobre o componente que exibe textos.
 
-### Code Splitting
+14. `components/TextContainer/index.js`: Já foi descrito anteriormente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+15. `context/AuthContext.js`: Descrição do gerenciamento de estado de autenticação.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Contexto de Autenticação
+O contexto de autenticação (context/AuthContext.js) gerencia o estado de login do usuário e fornece funções para login e logout. Ele permite que os componentes acessem as informações do usuário de maneira global.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Estilos Globais
+Os estilos globais são gerenciados através do createGlobalStyle do styled-components, aplicando uma fonte e esquema de cores consistentes em toda a aplicação.
