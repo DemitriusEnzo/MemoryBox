@@ -104,8 +104,5 @@ O contexto de autenticação (context/AuthContext.js) gerencia o estado de login
 # Estilos Globais
 Os estilos globais são gerenciados através do createGlobalStyle do styled-components, aplicando uma fonte e esquema de cores consistentes em toda a aplicação.
 
-# Licença
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
 # Contato
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato: enzodemitrius10@gmail.com
