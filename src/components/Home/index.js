@@ -49,7 +49,7 @@ const HomeButton = styled(Link)`
 function Home() {
   return (
     <HomeContainer>
-      <Title fontSize="6em">Welcome to memory box!</Title>
+      <Title paddingBottom="0.8em">Welcome to memory box!</Title>
       <HomeContent>
         <Text>
           Already have an account?

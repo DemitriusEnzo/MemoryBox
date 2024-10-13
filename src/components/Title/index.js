@@ -5,4 +5,5 @@ export const Title = styled.h1`
   font-size: ${props => props.fontSize || 'var(--title-size)'};
   text-align: ${props => props.align || 'center'};
   margin: 0;
+  padding-bottom: ${props => props.paddingBottom || 0};
 `;

@@ -6,7 +6,7 @@ import FormMemory from '../FormMemory';
 import ModalMemory from '../ModalMemory';
 
 const ButtonDiv = styled.div`
-  width: ${(props) => props.width || '20%'};
+  width: ${(props) => props.width || '30%'};
   display: flex;
   justify-content: center;
   align-items: center;
