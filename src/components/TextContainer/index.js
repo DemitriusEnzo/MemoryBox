@@ -8,12 +8,11 @@ export const Div = styled.div`
   justify-content: center;
   align-items: center;
   height: ${props => props.height || '20%'};
-  padding: ${props => props.padding || '0'}; 
 `;
 
 function TextContainer() {
   return (
-    <Div height="auto" padding="0.5em">
+    <Div>
       <Text fontSize="2.5em" aria-label="Keep your retrospectives, cherish the little moments!">Keep your retrospectives, cherish the little moments!</Text>
     </Div>
   );
