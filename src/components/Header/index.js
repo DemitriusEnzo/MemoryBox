@@ -30,7 +30,7 @@ function Header() {
   return (
     <HeaderContainer>
       <FontAwesomeIcon color="var(--text-color)" icon={faBoxOpen} size="2x" />
-      <Title>Memory Box</Title>
+      <Title fontSize="3em">Memory Box</Title>
       <FontAwesomeIcon
         color="var(--text-color)"
         icon={faUser}
