@@ -9,6 +9,6 @@ export const Text = styled.h3`
   border-bottom: ${props => props.borderb || 0};
 
   @media (max-width: 400px) {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 `;

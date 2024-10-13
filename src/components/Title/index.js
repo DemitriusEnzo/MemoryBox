@@ -7,7 +7,7 @@ export const Title = styled.h1`
   margin: 0;
   padding-bottom: ${props => props.paddingBottom || 0};
 
-  @media (max-width: 400px) {
+  @media (max-width: 485px) {
     font-size: 3em;
   }
 `;
