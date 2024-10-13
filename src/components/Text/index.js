@@ -7,4 +7,8 @@ export const Text = styled.h3`
   margin: 0;
   padding: ${props => props.padding || 0};
   border-bottom: ${props => props.borderb || 0};
+
+  @media (max-width: 400px) {
+    font-size: 2.5em;
+  }
 `;

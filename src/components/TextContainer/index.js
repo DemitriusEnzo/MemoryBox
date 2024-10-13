@@ -13,7 +13,7 @@ export const Div = styled.div`
 function TextContainer() {
   return (
     <Div>
-      <Text fontSize="2.5em" aria-label="Keep your retrospectives, cherish the little moments!">Keep your retrospectives, cherish the little moments!</Text>
+      <Text aria-label="Keep your retrospectives, cherish the little moments!">Keep your retrospectives, cherish the little moments!</Text>
     </Div>
   );
 }

@@ -6,4 +6,8 @@ export const Title = styled.h1`
   text-align: ${props => props.align || 'center'};
   margin: 0;
   padding-bottom: ${props => props.paddingBottom || 0};
+
+  @media (max-width: 400px) {
+    font-size: 3em;
+  }
 `;
