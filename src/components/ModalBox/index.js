@@ -8,8 +8,9 @@ import { getMemories } from '../../api';
 import { SubmitButton, Input, IconContainer, IconWrapper } from '../FormMemory';
 import { CloseButton } from '../ModalMemory';
 import axios from 'axios';
+import { API_URL as importedAPI_URL } from '../../api';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = importedAPI_URL;
 
 const ModalOverlay = styled.div`
   position: fixed;
