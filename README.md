@@ -1,7 +1,7 @@
 # Demitrius Box
 
 # Visão Geral
-O Demitrius Box Server é um projeto de front-end desenvolvido em React e Axios, com o objetivo de criar uma aplicação interativa para o armazenamento e visualização de memórias. Os usuários podem se registrar, fazer login, adicionar memórias e visualizar suas memórias em uma interface atraente e responsiva.
+O Memory Box Server é um projeto de front-end desenvolvido em React e Axios, com o objetivo de criar uma aplicação interativa para o armazenamento e visualização de memórias. Os usuários podem se registrar, fazer login, adicionar memórias e visualizar suas memórias em uma interface atraente e responsiva.
 
 # Estrutura do Projeto
 A estrutura do projeto é organizada em diretórios, facilitando a manutenção e a escalabilidade:
